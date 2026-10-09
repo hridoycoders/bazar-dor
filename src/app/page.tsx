@@ -1,8 +1,7 @@
-
 export default function Home() {
   return (
-    <div>
-     hiuiiii
-    </div>
+    <main className="p-10">
+       
+    </main>
   );
 }
