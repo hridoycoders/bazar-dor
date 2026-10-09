@@ -6,7 +6,12 @@ export type Product = {
   category: string;
   unit: string;
   price: number;
-  change: number;
   nameBn: string;
   icon: string;
+  today: string;
+  categoryIcon: string;
+  change: {
+    dir: "up" | "down" | "flat";
+    pct: number;
+  };
 };

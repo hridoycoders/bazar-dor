@@ -1,7 +1,9 @@
+import Marquee from "./components/Marquee";
+
 export default function Home() {
   return (
-    <main className="p-10">
-       
+    <main className="w-full border-y border-gray-100 bg-white">
+      <Marquee></Marquee>
     </main>
   );
 }

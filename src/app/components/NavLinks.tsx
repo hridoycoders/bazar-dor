@@ -2,8 +2,7 @@ import { Product } from "@/types/product";
 import Link from "next/link";
 const NavLinks = async () => {
   const res = await fetch(
-    "https://api.api-store.workers.dev/api/bazardor/categories",
-  );
+    "https://api.api-store.workers.dev/api/bazardor/categories");
   const data: Product[] = await res.json();
   return (
     <div className="w-full border-y border-gray-100 bg-white">
