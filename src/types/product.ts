@@ -8,7 +8,7 @@ export type Product = {
   price: number;
   nameBn: string;
   icon: string;
-  today: string;
+  today: number;
   categoryIcon: string;
   change: {
     dir: "up" | "down" | "flat";

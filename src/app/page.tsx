@@ -1,11 +1,15 @@
 import Hero from "./components/Hero";
 import Marquee from "./components/Marquee";
+import ProductSections from "./components/ProductSections";
+import { getProducts } from "@/lib/api";
 
-export default function Home() {
+export default async function Home() {
+  const products = await getProducts();
   return (
-    <main className="w-full border-y border-gray-100 bg-white">
+    <main>
       <Marquee></Marquee>
       <Hero></Hero>
+      <ProductSections products={products} />
     </main>
   );
 }
