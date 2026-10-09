@@ -11,7 +11,7 @@ const Navbar = () => {
     <header className="w-full border-b border-gray-100 bg-white">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
         {/* Logo & Title */}
-        <div className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">
           <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl bg-[#008744] p-2">
             <Image
               src="/logo.png"
@@ -29,8 +29,7 @@ const Navbar = () => {
             </span>
             <span className="text-xs font-medium text-gray-500">{date}</span>
           </div>
-        </div>
-
+        </Link>
         {/* login side*/}
         <div className="flex items-center gap-4">
           <Link
@@ -47,7 +46,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-       <NavLinks></NavLinks>
+      <NavLinks></NavLinks>
     </header>
   );
 };
