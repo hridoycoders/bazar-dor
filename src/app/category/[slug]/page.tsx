@@ -15,7 +15,7 @@ const categoryList = [
   { slug: "sobji", title: "সবজি", icon: "🥬" },
   { slug: "mach", title: "মাছ", icon: "🐟" },
   { slug: "mangsho", title: "মাংস", icon: "🥩" },
-  { slug: "dairy", title: "ডিম-দুগ্ধ", icon: "🥛" },
+  { slug: "dim-dui", title: "ডিম-দুধ", icon: "🥛" },
   { slug: "mosla", title: "মসলা", icon: "🌶️" },
 ];
 

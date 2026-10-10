@@ -30,7 +30,7 @@ export default function Hero() {
 
             {/* Button */}
             <Link
-              href="#products"
+              href="/#sob-ponno"
               className="mt-6 inline-block rounded-xl bg-[#008744] px-6 py-2.5 text-xs font-semibold text-white shadow-sm transition-all hover:bg-[#007038] hover:shadow-md md:text-sm"
             >
               সব পণ্য দেখুন
