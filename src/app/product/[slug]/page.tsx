@@ -91,9 +91,7 @@ async function ProductDetailsContent({ params }: ProductDetailsPageProps) {
               </p>
 
               <p className="mt-2 text-xs font-medium text-gray-600">
-                গতকালের তুলনায় আজ দাম{" "}
-                <span className="font-semibold text-emerald-700">বেড়েছে</span> •
-                ২ টাকা
+                প্রতি {product.unit}-এর বর্তমান দাম
               </p>
             </div>
           </div>
@@ -108,9 +106,6 @@ async function ProductDetailsContent({ params }: ProductDetailsPageProps) {
 
             <span className="text-xs text-gray-500">টাকা / {product.unit}</span>
 
-            <span className="mt-2 inline-flex items-center text-xs font-semibold text-rose-600">
-              ▲ ৩.১%
-            </span>
           </div>
         </section>
 
