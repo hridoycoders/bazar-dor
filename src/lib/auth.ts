@@ -8,23 +8,26 @@ if (!mongoUri) {
   throw new Error("BETTER_AUTH_MONGO_URL is missing");
 }
 
-const client = new MongoClient(mongoUri);
-const db = client.db("bazar-dor");
+const client = new MongoClient(mongoUri, {
+  serverSelectionTimeoutMS: 10000,
+});
 
+const db = client.db("bazar-dor");
 export const auth = betterAuth({
   database: mongodbAdapter(db),
 
   emailAndPassword: {
     enabled: true,
   },
+
   socialProviders: {
     google: {
-      clientId: process.env.GOOGLE_CLIENT_ID as string,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     },
     github: {
-      clientId: process.env.GITHUB_CLIENT_ID as string,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
+      clientId: process.env.GITHUB_CLIENT_ID!,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET!,
     },
   },
 
