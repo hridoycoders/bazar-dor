@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import {Noto_Serif_Bengali } from "next/font/google";
+import { Noto_Serif_Bengali } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Marquee from "./components/Marquee";
@@ -25,13 +26,22 @@ export default function RootLayout({
       lang="bn"
       className={`${NotoSerifBenali.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <Navbar></Navbar>
-        <Marquee></Marquee>
+      <body className="flex min-h-full flex-col">
+        <Suspense fallback={<div className="h-16" />}>
+          <Navbar />
+        </Suspense>
+
+        <Suspense fallback={<div className="h-8" />}>
+          <Marquee />
+        </Suspense>
+
         <main>{children}</main>
+
         <Toaster position="top-right" reverseOrder={false} />
-        <Footer></Footer>
+
+        <Footer />
       </body>
     </html>
   );
 }
+
