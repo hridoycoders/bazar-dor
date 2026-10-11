@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { getProducts } from "@/lib/api";
+import Link from "next/link";
 
 type ProductDetailsPageProps = {
   params: Promise<{ slug: string }>;
@@ -48,16 +49,28 @@ export default async function ProductDetailsPage({
     <main className="min-h-screen bg-[#f3f5f1] px-4 py-6 sm:px-8 sm:py-8 font-sans text-gray-800">
       <div className="mx-auto max-w-5xl space-y-6">
         {/* Breadcrumb Nav */}
-        <nav className="flex items-center gap-2 text-xs sm:text-sm text-gray-500">
-          <a href="#" className="hover:underline">
+        <nav
+          aria-label="Breadcrumb"
+          className="mb-5 flex flex-wrap items-center gap-2 text-xs text-gray-500 sm:text-sm"
+        >
+          <Link href="/" className="text-green-700 hover:underline">
             হোম
-          </a>
-          <span>›</span>
-          <a href="#" className="hover:underline">
+          </Link>
+
+          <span aria-hidden="true">›</span>
+
+          <Link
+            href={`/category/${product.category}`}
+            className="text-green-700 hover:underline"
+          >
             {product.categoryNameBn || "ক্যাটাগরি"}
-          </a>
-          <span>›</span>
-          <span className="font-medium text-gray-700">{product.nameBn}</span>
+          </Link>
+
+          <span aria-hidden="true">›</span>
+
+          <span aria-current="page" className="font-semibold text-gray-700">
+            {product.nameBn}
+          </span>
         </nav>
 
         {/* Header Card */}
@@ -83,7 +96,7 @@ export default async function ProductDetailsPage({
           </div>
 
           {/* Today's Price Highlight Badge */}
-          <div className="flex flex-col items-center justify-center rounded-2xl bg-[#f2f4f1] p-4 text-center min-w-[140px]">
+          <div className="flex flex-col items-center justify-center rounded-2xl bg-[#f2f4f1] p-4 text-center min-w-35">
             <span className="text-xs text-gray-500">আজকের দাম</span>
             <span className="text-3xl font-black text-gray-900 mt-1">
               {formatPrice(product.today)}
@@ -94,7 +107,6 @@ export default async function ProductDetailsPage({
             </span>
           </div>
         </section>
-
         {/* Price Summary Grid */}
         <section>
           <h2 className="mb-3 text-lg font-bold text-gray-900">
@@ -136,7 +148,6 @@ export default async function ProductDetailsPage({
             </div>
           </div>
         </section>
-
         {/* Market-wise Price Table */}
         <section>
           <h2 className="mb-3 text-lg font-bold text-gray-900">

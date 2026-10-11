@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import NavLinks from "./NavLinks";
+import AuthControls from "./auth/AuthControls";
 
 const Navbar = () => {
   const date = new Date().toLocaleDateString("bn-BD", {
@@ -31,20 +32,7 @@ const Navbar = () => {
           </div>
         </Link>
         {/* login side*/}
-        <div className="flex items-center gap-4">
-          <Link
-            href="/signin"
-            className="text-sm font-semibold text-gray-800 transition-colors hover:text-black"
-          >
-            সাইন ইন
-          </Link>
-          <Link
-            href="/signup"
-            className="rounded-xl bg-[#008744] px-5 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[#007038] hover:shadow-md"
-          >
-            সাইন আপ
-          </Link>
-        </div>
+        <AuthControls></AuthControls>
       </div>
       <NavLinks></NavLinks>
     </header>
