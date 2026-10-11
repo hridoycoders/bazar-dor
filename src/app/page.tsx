@@ -7,7 +7,6 @@ export default async function Home() {
   return (
     <main>
       <Hero />
-
       <section id="sob-ponno" >
         <ProductSections products={products} />
       </section>
